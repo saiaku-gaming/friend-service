@@ -7,8 +7,10 @@ import com.valhallagame.common.RestCaller;
 import com.valhallagame.common.RestResponse;
 import com.valhallagame.friendserviceclient.model.AcceptParameter;
 import com.valhallagame.friendserviceclient.model.DeclineParameter;
+import com.valhallagame.friendserviceclient.model.FriendsData;
 import com.valhallagame.friendserviceclient.model.InviteParameter;
 import com.valhallagame.friendserviceclient.model.RemoveFriendParameter;
+import com.valhallagame.friendserviceclient.model.UsernameParameter;
 
 public class FriendServiceClient {
 	private static FriendServiceClient friendServiceClient;
@@ -51,5 +53,10 @@ public class FriendServiceClient {
 	public RestResponse<String> removeFriend(String remover, String removee) throws IOException {
 		return restCaller.postCall(friendServiceServerUrl + "/v1/friend/remove-friend",
 				new RemoveFriendParameter(remover, removee), String.class);
+	}
+
+	public RestResponse<FriendsData> getFriendsData(String username) throws IOException {
+		return restCaller.postCall(friendServiceServerUrl + "/v1/friend/get-friends-data",
+				new UsernameParameter(username), FriendsData.class);
 	}
 }
