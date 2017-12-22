@@ -1,7 +1,5 @@
 package com.valhallagame.friendserviceclient.model;
 
-import java.util.List;
-
 import lombok.AllArgsConstructor;
 import lombok.Data;
 import lombok.NoArgsConstructor;
@@ -9,8 +7,8 @@ import lombok.NoArgsConstructor;
 @Data
 @NoArgsConstructor
 @AllArgsConstructor
-public class FriendsData {
-	private List<FriendData> friends;
-	private List<InviteData> sentInvites;
-	private List<InviteData> receivedInvites;
+public class FriendData {
+	boolean online;
+	String displayUsername;
+	String displayCharacterName;
 }
