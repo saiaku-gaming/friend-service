@@ -80,8 +80,8 @@ public class FriendServiceClient {
 				new RemoveCharacterFriendParameter(removerUsername, removeeCharacterName), String.class);
 	}
 
-	public RestResponse<FriendsData> getFriendsData(String username) throws IOException {
-		return restCaller.postCall(friendServiceServerUrl + "/v1/friend/get-friends-data",
+	public RestResponse<FriendsData> getFriendData(String username) throws IOException {
+		return restCaller.postCall(friendServiceServerUrl + "/v1/friend/get-friend-data",
 				new UsernameParameter(username), FriendsData.class);
 	}
 }
