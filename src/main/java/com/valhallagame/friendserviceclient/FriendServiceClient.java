@@ -5,16 +5,16 @@ import java.io.IOException;
 import com.valhallagame.common.DefaultServicePortMappings;
 import com.valhallagame.common.RestCaller;
 import com.valhallagame.common.RestResponse;
-import com.valhallagame.friendserviceclient.model.AcceptCharacterParameter;
-import com.valhallagame.friendserviceclient.model.AcceptPersonParameter;
-import com.valhallagame.friendserviceclient.model.DeclineCharacterParameter;
-import com.valhallagame.friendserviceclient.model.DeclinePersonParameter;
+import com.valhallagame.friendserviceclient.message.AcceptCharacterParameter;
+import com.valhallagame.friendserviceclient.message.AcceptPersonParameter;
+import com.valhallagame.friendserviceclient.message.DeclineCharacterParameter;
+import com.valhallagame.friendserviceclient.message.DeclinePersonParameter;
+import com.valhallagame.friendserviceclient.message.InviteCharacterParameter;
+import com.valhallagame.friendserviceclient.message.InvitePersonParameter;
+import com.valhallagame.friendserviceclient.message.RemoveCharacterFriendParameter;
+import com.valhallagame.friendserviceclient.message.RemovePersonFriendParameter;
+import com.valhallagame.friendserviceclient.message.UsernameParameter;
 import com.valhallagame.friendserviceclient.model.FriendsData;
-import com.valhallagame.friendserviceclient.model.InviteCharacterParameter;
-import com.valhallagame.friendserviceclient.model.InvitePersonParameter;
-import com.valhallagame.friendserviceclient.model.RemoveCharacterFriendParameter;
-import com.valhallagame.friendserviceclient.model.RemovePersonFriendParameter;
-import com.valhallagame.friendserviceclient.model.UsernameParameter;
 
 public class FriendServiceClient {
 	private static FriendServiceClient friendServiceClient;

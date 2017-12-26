@@ -1,4 +1,4 @@
-package com.valhallagame.friendserviceclient.model;
+package com.valhallagame.friendserviceclient.message;
 
 import lombok.AllArgsConstructor;
 import lombok.Data;
@@ -7,7 +7,6 @@ import lombok.NoArgsConstructor;
 @Data
 @NoArgsConstructor
 @AllArgsConstructor
-public class Invite {
-	private String receiver;
-	private String sender;
+public class UsernameParameter {
+	private String username;
 }
