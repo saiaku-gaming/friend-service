@@ -2,7 +2,6 @@ package com.valhallagame.friendserviceclient.message;
 
 import javax.validation.constraints.NotNull;
 
-import com.valhallagame.common.ExposedNameInYmer;
 import com.valhallagame.common.validation.CheckLowercase;
 
 import lombok.AllArgsConstructor;
@@ -12,12 +11,11 @@ import lombok.NoArgsConstructor;
 @Data
 @NoArgsConstructor
 @AllArgsConstructor
-public class InviteCharacterParameter {
+public class SendCharacterInviteParameter {
 	@NotNull
 	@CheckLowercase
 	private String username;
 	@NotNull
 	@CheckLowercase
-	@ExposedNameInYmer("characterName")
-	private String targetCharacterName;
+	private String displayCharacterName;
 }

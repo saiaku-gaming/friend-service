@@ -12,7 +12,7 @@ import lombok.NoArgsConstructor;
 @Data
 @NoArgsConstructor
 @AllArgsConstructor
-public class InvitePersonParameter {
+public class SendPersonInviteParameter {
 	@NotNull
 	@CheckLowercase
 	private String username;
