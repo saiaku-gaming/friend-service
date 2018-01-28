@@ -2,6 +2,7 @@ package com.valhallagame.friendserviceclient.message;
 
 import javax.validation.constraints.NotNull;
 
+import com.valhallagame.common.ExposedNameInYmer;
 import com.valhallagame.common.validation.CheckLowercase;
 
 import lombok.AllArgsConstructor;
@@ -14,8 +15,9 @@ import lombok.NoArgsConstructor;
 public class RemoveCharacterFriendParameter {
 	@NotNull
 	@CheckLowercase
-	private String removerUsername;
+	private String username;
 	@NotNull
 	@CheckLowercase
-	private String removeeCharacterName;
+	@ExposedNameInYmer("characterName")
+	private String targetCharacterName;
 }

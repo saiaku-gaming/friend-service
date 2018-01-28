@@ -5,15 +5,15 @@ import java.io.IOException;
 import com.valhallagame.common.DefaultServicePortMappings;
 import com.valhallagame.common.RestCaller;
 import com.valhallagame.common.RestResponse;
-import com.valhallagame.friendserviceclient.message.AcceptCharacterParameter;
-import com.valhallagame.friendserviceclient.message.AcceptPersonParameter;
+import com.valhallagame.friendserviceclient.message.AcceptCharacterInviteParameter;
+import com.valhallagame.friendserviceclient.message.AcceptPersonInviteParameter;
 import com.valhallagame.friendserviceclient.message.DeclineCharacterParameter;
-import com.valhallagame.friendserviceclient.message.DeclinePersonParameter;
+import com.valhallagame.friendserviceclient.message.DeclinePersonInviteParameter;
+import com.valhallagame.friendserviceclient.message.GetFriendDataParameter;
 import com.valhallagame.friendserviceclient.message.InviteCharacterParameter;
 import com.valhallagame.friendserviceclient.message.InvitePersonParameter;
 import com.valhallagame.friendserviceclient.message.RemoveCharacterFriendParameter;
 import com.valhallagame.friendserviceclient.message.RemovePersonFriendParameter;
-import com.valhallagame.friendserviceclient.message.UsernameParameter;
 import com.valhallagame.friendserviceclient.model.FriendsData;
 
 public class FriendServiceClient {
@@ -39,49 +39,49 @@ public class FriendServiceClient {
 		return friendServiceClient;
 	}
 
-	public RestResponse<String> sendPersonInvite(String senderUsername, String receiverUsername) throws IOException {
+	public RestResponse<String> sendPersonInvite(String username, String receiverUsername) throws IOException {
 		return restCaller.postCall(friendServiceServerUrl + "/v1/friend/send-person-invite",
-				new InvitePersonParameter(senderUsername, receiverUsername), String.class);
+				new InvitePersonParameter(username, receiverUsername), String.class);
 	}
 	
-	public RestResponse<String> sendCharacterInvite(String senderUsername, String receiverCharacterName) throws IOException {
+	public RestResponse<String> sendCharacterInvite(String username, String receiverCharacterName) throws IOException {
 		return restCaller.postCall(friendServiceServerUrl + "/v1/friend/send-character-invite",
-				new InviteCharacterParameter(senderUsername, receiverCharacterName), String.class);
+				new InviteCharacterParameter(username, receiverCharacterName), String.class);
 	}
 
-	public RestResponse<String> acceptPersonInvite(String accepterUsername, String accpeteeUsername) throws IOException {
+	public RestResponse<String> acceptPersonInvite(String username, String accpeteeUsername) throws IOException {
 		return restCaller.postCall(friendServiceServerUrl + "/v1/friend/accept-person-invite",
-				new AcceptPersonParameter(accepterUsername, accpeteeUsername), String.class);
+				new AcceptPersonInviteParameter(username, accpeteeUsername), String.class);
 	}
 
-	public RestResponse<String> acceptCharacterInvite(String accepterUsername, String accpeteeCharacterName) throws IOException {
+	public RestResponse<String> acceptCharacterInvite(String username, String accpeteeCharacterName) throws IOException {
 		return restCaller.postCall(friendServiceServerUrl + "/v1/friend/accept-character-invite",
-				new AcceptCharacterParameter(accepterUsername, accpeteeCharacterName), String.class);
+				new AcceptCharacterInviteParameter(username, accpeteeCharacterName), String.class);
 	}
 
-	public RestResponse<String> declinePersonInvite(String declinerUsername, String declineeUsername) throws IOException {
+	public RestResponse<String> declinePersonInvite(String username, String declineeUsername) throws IOException {
 		return restCaller.postCall(friendServiceServerUrl + "/v1/friend/decline-person-invite",
-				new DeclinePersonParameter(declinerUsername, declineeUsername), String.class);
+				new DeclinePersonInviteParameter(username, declineeUsername), String.class);
 	}
 
-	public RestResponse<String> declineCharacterInvite(String declinerUsername, String declineeCharacterName) throws IOException {
+	public RestResponse<String> declineCharacterInvite(String username, String declineeCharacterName) throws IOException {
 		return restCaller.postCall(friendServiceServerUrl + "/v1/friend/decline-character-invite",
-				new DeclineCharacterParameter(declinerUsername, declineeCharacterName), String.class);
+				new DeclineCharacterParameter(username, declineeCharacterName), String.class);
 	}
 	
 	
-	public RestResponse<String> removePersonFriend(String removerUsername, String removeeUsername) throws IOException {
+	public RestResponse<String> removePersonFriend(String username, String removeeUsername) throws IOException {
 		return restCaller.postCall(friendServiceServerUrl + "/v1/friend/remove-person-friend",
-				new RemovePersonFriendParameter(removerUsername, removeeUsername), String.class);
+				new RemovePersonFriendParameter(username, removeeUsername), String.class);
 	}
 	
-	public RestResponse<String> removeCharacterFriend(String removerUsername, String removeeCharacterName) throws IOException {
+	public RestResponse<String> removeCharacterFriend(String username, String removeeCharacterName) throws IOException {
 		return restCaller.postCall(friendServiceServerUrl + "/v1/friend/remove-character-friend",
-				new RemoveCharacterFriendParameter(removerUsername, removeeCharacterName), String.class);
+				new RemoveCharacterFriendParameter(username, removeeCharacterName), String.class);
 	}
 
 	public RestResponse<FriendsData> getFriendData(String username) throws IOException {
 		return restCaller.postCall(friendServiceServerUrl + "/v1/friend/get-friend-data",
-				new UsernameParameter(username), FriendsData.class);
+				new GetFriendDataParameter(username), FriendsData.class);
 	}
 }

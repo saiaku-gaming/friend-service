@@ -11,7 +11,7 @@ import lombok.NoArgsConstructor;
 @Data
 @NoArgsConstructor
 @AllArgsConstructor
-public class UsernameParameter {
+public class GetFriendDataParameter {
 	@NotNull
 	@CheckLowercase
 	private String username;
