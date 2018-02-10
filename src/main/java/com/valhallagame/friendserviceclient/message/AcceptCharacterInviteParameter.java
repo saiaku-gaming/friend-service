@@ -16,6 +16,5 @@ public class AcceptCharacterInviteParameter {
 	@CheckLowercase
 	private String username;
 	@NotNull
-	@CheckLowercase
 	private String displayCharacterName;
 }
