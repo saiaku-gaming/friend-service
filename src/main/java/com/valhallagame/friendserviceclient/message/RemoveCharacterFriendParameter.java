@@ -17,7 +17,6 @@ public class RemoveCharacterFriendParameter {
 	@CheckLowercase
 	private String username;
 	@NotNull
-	@CheckLowercase
 	@ExposedNameInYmer("characterName")
 	private String displayCharacterName;
 }

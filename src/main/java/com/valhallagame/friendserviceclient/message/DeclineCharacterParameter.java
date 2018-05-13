@@ -17,7 +17,6 @@ public class DeclineCharacterParameter {
 	@CheckLowercase
 	private String username;
 	@NotNull
-	@CheckLowercase
 	@ExposedNameInYmer("characterName")
 	private String displayCharacterName;
 }
