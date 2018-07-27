@@ -1,16 +1,12 @@
 package com.valhallagame.friendserviceclient;
 
-import java.io.IOException;
-
 import com.valhallagame.common.DefaultServicePortMappings;
 import com.valhallagame.common.RestCaller;
 import com.valhallagame.common.RestResponse;
-import com.valhallagame.friendserviceclient.message.AcceptCharacterInviteParameter;
-import com.valhallagame.friendserviceclient.message.DeclineCharacterParameter;
-import com.valhallagame.friendserviceclient.message.GetFriendDataParameter;
-import com.valhallagame.friendserviceclient.message.RemoveCharacterFriendParameter;
-import com.valhallagame.friendserviceclient.message.SendCharacterInviteParameter;
+import com.valhallagame.friendserviceclient.message.*;
 import com.valhallagame.friendserviceclient.model.FriendsData;
+
+import java.io.IOException;
 
 public class FriendServiceClient {
 	private static FriendServiceClient friendServiceClient;
@@ -50,10 +46,10 @@ public class FriendServiceClient {
 		return restCaller.postCall(friendServiceServerUrl + "/v1/friend/decline-character-invite",
 				new DeclineCharacterParameter(username, declineeCharacterName), String.class);
 	}
-	
-	public RestResponse<String> removeCharacterFriend(String username, String removeeCharacterName) throws IOException {
+
+    public RestResponse<String> removeCharacterFriend(String username, String removeeDisplayCharacterName) throws IOException {
 		return restCaller.postCall(friendServiceServerUrl + "/v1/friend/remove-character-friend",
-				new RemoveCharacterFriendParameter(username, removeeCharacterName), String.class);
+                new RemoveCharacterFriendParameter(username, removeeDisplayCharacterName), String.class);
 	}
 
 	public RestResponse<FriendsData> getFriendData(String username) throws IOException {
