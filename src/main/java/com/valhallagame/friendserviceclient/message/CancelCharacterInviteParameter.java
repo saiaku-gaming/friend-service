@@ -11,10 +11,10 @@ import javax.validation.constraints.NotNull;
 @Data
 @NoArgsConstructor
 @AllArgsConstructor
-public class AcceptCharacterInviteParameter {
-	@NotNull
-	@CheckLowercase
-	private String username;
-	@NotBlank
-	private String displayCharacterName;
+public class CancelCharacterInviteParameter {
+    @NotNull
+    @CheckLowercase
+    private String username;
+    @NotBlank
+    private String displayCharacterName;
 }
